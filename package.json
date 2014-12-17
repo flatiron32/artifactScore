@@ -1,0 +1,30 @@
+{
+  "name": "artifactScore",
+  "version": "1.0.0",
+  "description": "Score an Artifact for development, deployment, and operational quality.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/jshint . --reporter=./node_modules/jshint/node_modules/cli/index.js",
+    "checkStyle": "./node_modules/.bin/jscs .",
+    "pretest": "rm -rf coverage && npm run-script lint && npm run-script checkStyle",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive -R spec -r should",
+    "posttest": "./node_modules/.bin/istanbul check-coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flatiron32/artifactScore.git"
+  },
+  "author": "Jacob Tomaw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flatiron32/artifactScore/issues"
+  },
+  "homepage": "https://github.com/flatiron32/artifactScore",
+  "devDependencies": {
+    "istanbul": "^0.3.5",
+    "jscs": "^1.8.1",
+    "jshint": "^2.5.10",
+    "mocha": "^2.0.1",
+    "should": "^4.4.1"
+  }
+}
